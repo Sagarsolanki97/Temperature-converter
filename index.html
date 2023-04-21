@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp conveter</title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        input {
+            /* height: 30px;
+            font-size: 500; */
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 250px;
+            text-align: center;
+        }
+
+        .contnt {
+            text-align: center;
+            background: #b73333;
+            padding: 30px;
+        }
+
+        .input {
+            display: inline-block;
+        }
+        label{
+font-size: 27px;
+color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+   
+        <h3>Tempeature Converter</h3>
+        <div class="contnt">
+            <div class="input">
+                <label for="celc">celc.</label><br>
+                <input id="celc" type="number" value="0">
+                
+            </div>
+            <div class="input">
+                <label for="fer">Fer.</label><br>
+                <input id="fer" type="number" value="32">
+            </div>
+        </div>
+   
+    <script>
+        var c = document.getElementById("celc");
+        var f = document.getElementById("fer");
+        // (cc × 9/5) + 32 = 32°F
+
+        c.addEventListener("input", function () {
+            var cc = this.value;
+            var ff = (cc * 9 / 5) + 32;
+            console.log(ff);
+            f.value = ff;
+
+        });
+        f.addEventListener("input", function () {
+            var ff = this.value;
+            var cc = (ff - 32) * 5 / 9;
+            ;
+            c.value = cc;
+        })
+
+    </script>
+</body>
+
+</html>
